@@ -1,15 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="shadow-md">
-      <div className="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
-        <div className="flex items-center">
+    <header className="shadow-md">
+      <div className="flex items-center justify-between px-4 py-4 sm:px-8 max-w-7xl mx-auto">
+        <Link to="/" className="flex items-center">
           {/* <img className="h-10" src="" alt="Logo Theobnb" /> */}
           <p className="text-2xl font-bold text-primary-400">TheoBnB</p>
-        </div>
+        </Link>
 
-        <div className="flex items-center border border-gray-300 pr-4 pl-6 py-2 rounded-full shadow-md">
+        <Link
+          to="/"
+          className="hidden lg:flex items-center border border-gray-300 pr-4 pl-6 py-2 rounded-full shadow-md"
+        >
           <p className="pr-4 border-r border-r-gray-300">Qualquer lugar</p>
           <p className="px-4 border-r border-r-gray-300">Qualquer semana</p>
           <p className="px-4 ">Hóspedes</p>
@@ -29,9 +33,12 @@ const Header = () => {
               />
             </svg>
           </div>
-        </div>
+        </Link>
 
-        <div className="flex items-center border border-gray-300 pr-6 pl-4 py-2 rounded-full shadow-md gap-2">
+        <Link
+          to="/login"
+          className="flex items-center border border-gray-300 pr-6 pl-4 py-2 rounded-full shadow-md gap-2"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -58,10 +65,10 @@ const Header = () => {
             />
           </svg>
 
-          <p>Théo Tonin</p>
-        </div>
+          <p className="max-w-20 truncate sm:max-w-32">Théo Tonin</p>
+        </Link>
       </div>
-    </div>
+    </header>
   );
 };
 
